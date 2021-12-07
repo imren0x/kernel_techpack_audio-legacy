@@ -1,5 +1,14 @@
-// SPDX-License-Identifier: GPL-2.0-only
-/* Copyright (c) 2012-2019, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2012-2020, The Linux Foundation. All rights reserved.
+ * Copyright (C) 2019 XiaoMi, Inc.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 and
+ * only version 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
  */
 
 
@@ -3046,6 +3055,40 @@ static struct snd_soc_dai_driver msm_fe_dais[] = {
 		.name = "MultiMedia30",
 		.probe = fe_dai_probe,
 	},
+#ifdef CONFIG_SND_SOC_TAS2557
+	{
+		.capture = {
+			.stream_name = "Quinary MI2S_TX Hostless Capture",
+			.aif_name = "QUIN_MI2S_UL_HL",
+			.rates = SNDRV_PCM_RATE_8000_48000,
+			.formats = (SNDRV_PCM_FMTBIT_S16_LE |
+					SNDRV_PCM_FMTBIT_S24_LE),
+			.channels_min = 1,
+			.channels_max = 2,
+			.rate_min = 8000,
+			.rate_max = 48000,
+		},
+		.ops = &msm_fe_dai_ops,
+		.name = "QUIN_MI2S_TX_HOSTLESS",
+		.probe = fe_dai_probe,
+	},
+	{
+		.playback = {
+			.stream_name = "Quinary MI2S_RX Hostless Playback",
+			.aif_name = "QUIN_MI2S_DL_HL",
+			.rates = SNDRV_PCM_RATE_8000_192000,
+			.formats = SNDRV_PCM_FMTBIT_S16_LE |
+					SNDRV_PCM_FMTBIT_S24_LE,
+			.channels_min = 1,
+			.channels_max = 8,
+			.rate_min = 8000,
+			.rate_max = 192000,
+		},
+		.ops = &msm_fe_dai_ops,
+		.name = "QUIN_MI2S_RX_HOSTLESS",
+		.probe = fe_dai_probe,
+	},
+#endif
 };
 
 static int msm_fe_dai_dev_probe(struct platform_device *pdev)
