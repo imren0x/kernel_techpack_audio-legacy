@@ -13,7 +13,7 @@
 #include <linux/sched.h>
 #include <uapi/linux/sched/types.h>
 #include <sound/soc.h>
-#include "codecs/msm-cdc-pinctrl.h"
+#include <asoc/msm-cdc-pinctrl.h>
 #include "msm8952.h"
 
 struct cdc_pdm_pinctrl_info {
