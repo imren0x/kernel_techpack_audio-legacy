@@ -25,6 +25,7 @@
 #include "msm-cdc-common.h"
 #include "sdm660-cdc-irq.h"
 #include "msm-analog-cdc-regmap.h"
+#include <asoc/sdm660-common.h>
 #include <asoc/wcd-mbhc-v2-api.h>
 #include "../../msm8952.h"
 
