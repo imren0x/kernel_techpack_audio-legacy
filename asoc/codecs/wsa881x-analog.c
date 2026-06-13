@@ -1039,7 +1039,7 @@ static int wsa881x_startup(struct wsa881x_pdata *pdata)
 static int wsa881x_shutdown(struct wsa881x_pdata *pdata)
 {
 	int ret = 0;
-	struct snd_soc_card *card = pdata->component->card;
+        struct snd_soc_card *card = pdata->component->card;
 
 	pr_debug("%s(): wsa shutdown, enable_cnt:%d\n", __func__,
 					pdata->enable_cnt);

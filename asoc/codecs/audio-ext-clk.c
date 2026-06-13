@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0-only
-/* Copyright (c) 2015-2018, 2019 The Linux Foundation. All rights reserved.
+/* Copyright (c) 2015-2017, 2019 The Linux Foundation. All rights reserved.
  */
 
 #include <linux/kernel.h>
@@ -193,6 +193,7 @@ static const struct clk_ops audio_ext_pmi_clk_ops = {
 	.prepare = audio_ext_pmi_clk_prepare,
 	.unprepare = audio_ext_pmi_clk_unprepare,
 };
+
 static struct audio_ext_pmi_clk audio_pmi_lnbb_clk = {
 	.gpio = -EINVAL,
 	.c = {
@@ -327,8 +328,9 @@ static int audio_ref_clk_probe(struct platform_device *pdev)
 			goto err_clk_register;
 		}
 	}
+
 	ret = of_msm_clock_register(pdev->dev.of_node, audio_ref_clock,
-					ARRAY_SIZE(audio_ref_clock));
+			      ARRAY_SIZE(audio_ref_clock));
 	if (ret) {
 		dev_err(&pdev->dev, "%s: clock register failed\n", __func__);
 		goto err_clk_register;
