@@ -23,9 +23,10 @@
 #include <asoc/msm-cdc-pinctrl.h>
 #include "msm8952.h"
 #include "msm-pcm-voice-v2.h"
-#if IS_ENABLED(CONFIG_MACH_XIAOMI_YSL)
-#include "spk_ext_pa_mtp.h"
+#if IS_ENABLED(CONFIG_MACH_XIAOMI_TITANIUM)
+#include <xiaomi-titanium/mach.h>
 #endif
+#include "spk_ext_pa_mtp.h"
 
 #define DRV_NAME "msm8952-asoc-wcd"
 
