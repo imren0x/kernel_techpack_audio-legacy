@@ -23,7 +23,6 @@
 #include <asoc/msm-cdc-pinctrl.h>
 #include "msm8952.h"
 #include <linux/sched.h>
-#include <uapi/linux/sched/types.h>
 #include "msm-pcm-voice-v2.h"
 
 #define DRV_NAME "msm8952-asoc-wcd"
@@ -462,7 +461,6 @@ int msm_spk_ext_pa_ctrl(struct msm_asoc_mach_data *pdatadata, bool value)
 	int ret = 0;
 	struct sched_param param;
 	int maxpri;
-
 	maxpri = MAX_USER_RT_PRIO - 1;
 	pr_debug("whl apk pa ctl -> high priorty start priorty = %d\n", maxpri);
 	param.sched_priority = maxpri;
