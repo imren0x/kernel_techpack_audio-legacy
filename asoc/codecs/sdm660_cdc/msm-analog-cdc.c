@@ -4179,7 +4179,7 @@ static void msm_anlg_cdc_configure_cap(struct snd_soc_component *component,
 
 	struct msm_asoc_mach_data *pdata = NULL;
 
-	pdata = snd_soc_card_get_drvdata(component->card);
+	pdata = (component->card);
 
 	pr_debug("\n %s: micbias1 %x micbias2 = %d\n", __func__, micbias1,
 			micbias2);
