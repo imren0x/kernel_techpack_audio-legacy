@@ -2521,7 +2521,7 @@ static struct snd_soc_dai_link msm8952_dai[] = {
 		.ignore_pmdown_time = 1,
 		.id = MSM_FRONTEND_DAI_MULTIMEDIA19,
 	},
-#ifdef CONFIG_SND_SOC_TAS2557
+#ifdef CONFIG_MACH_XIAOMI_VINCE
 	{/* hw:x,43 */
 		.name = "Quinary MI2S TX_Hostless",
 		.stream_name = "Quinary MI2S_TX Hostless Capture",
@@ -2759,7 +2759,7 @@ static struct snd_soc_dai_link msm8952_dai[] = {
 		.stream_name = "Quinary MI2S Capture",
 		.cpu_dai_name = "msm-dai-q6-mi2s.4",
 		.platform_name = "msm-pcm-routing",
-#ifdef CONFIG_SND_SOC_TAS2557
+#ifdef CONFIG_MACH_XIAOMI_VINCE
 		.codec_dai_name = "tas2557 ASI1",
 		.codec_name = "tas2557.2-004c",
 #else
@@ -2824,7 +2824,7 @@ static struct snd_soc_dai_link msm8952_quin_dai_link[] = {
 		.stream_name = "Quinary MI2S Playback",
 		.cpu_dai_name = "msm-dai-q6-mi2s.4",
 		.platform_name = "msm-pcm-routing",
-#ifdef CONFIG_SND_SOC_TAS2557
+#ifdef CONFIG_MACH_XIAOMI_VINCE
 		.codec_dai_name = "tas2557 ASI1",
 		.codec_name = "tas2557.2-004c",
 #else
