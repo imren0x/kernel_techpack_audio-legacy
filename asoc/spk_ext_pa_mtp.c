@@ -139,9 +139,9 @@ int get_external_spk_pa(struct snd_kcontrol *kcontrol,
 int set_external_spk_pa(struct snd_kcontrol *kcontrol,
 		       struct snd_ctl_elem_value *ucontrol)
 {
-	struct snd_soc_codec *codec = snd_soc_kcontrol_codec(kcontrol);
+	struct snd_soc_component *component = snd_soc_kcontrol_component(kcontrol);
 	struct msm_asoc_mach_data *pdata = NULL;
-	pdata = snd_soc_card_get_drvdata(codec->component.card);
+	pdata = snd_soc_card_get_drvdata(component->card);
 	pr_debug("At %d In (%s), external_spk_control=%d, value.integer.value[0]=%ld\n", __LINE__, __FUNCTION__, external_spk_control, ucontrol->value.integer.value[0]);
 	if (external_spk_control == ucontrol->value.integer.value[0])
 		return 0;
