@@ -24,7 +24,6 @@
 #include "msm-cdc-common.h"
 #include "sdm660-cdc-irq.h"
 #include "msm-analog-cdc-regmap.h"
-#include <asoc/sdm660-common.h>
 #include <asoc/wcd-mbhc-v2-api.h>
 #if IS_ENABLED(CONFIG_MACH_XIAOMI_TITANIUM)
 #include <xiaomi-titanium/mach.h>
