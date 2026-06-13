@@ -192,7 +192,7 @@ endif
 
 ifdef CONFIG_MACH_XIAOMI_YSL
 MACHINE_OBJS += spk_ext_pa_mtp.o
-#endif
+endif
 
 # for SDM450 external codec sound card driver
 ifdef CONFIG_SND_SOC_EXT_CODEC_SDM450
