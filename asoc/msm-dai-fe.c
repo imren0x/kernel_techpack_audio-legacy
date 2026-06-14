@@ -20,6 +20,9 @@
 #include <sound/core.h>
 #include <sound/pcm.h>
 #include <sound/soc.h>
+#if IS_ENABLED(CONFIG_MACH_XIAOMI_TITANIUM)
+#include <xiaomi-titanium/mach.h>
+#endif
 
 static struct snd_soc_dai_ops msm_fe_dai_ops = {};
 
@@ -3055,7 +3058,7 @@ static struct snd_soc_dai_driver msm_fe_dais[] = {
 		.name = "MultiMedia30",
 		.probe = fe_dai_probe,
 	},
-#ifdef CONFIG_MACH_XIAOMI_VINCE
+#if IS_ENABLED(CONFIG_MACH_XIAOMI_VINCE)
 	{
 		.capture = {
 			.stream_name = "Quinary MI2S_TX Hostless Capture",
