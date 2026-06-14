@@ -3315,7 +3315,7 @@ static struct snd_soc_card *msm8952_populate_sndcard_dailinks(
 			}
 		}
 	}
-}
+#endif
 
 	memcpy(msm8952_dai_links, msm8952_dai, sizeof(msm8952_dai));
 	dailink = msm8952_dai_links;
